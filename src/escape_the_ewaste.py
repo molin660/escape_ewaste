@@ -15,8 +15,9 @@ import random
 import os
 
 #Initilization of pygame window 
+os.environ["SDL_VIDEO_CENTERED"] = "1"
 init()
-os.environ['SDL_VIDEO_WINDOW_POS'] = "%d, %d" %(20, 20)
+#os.environ['SDL_VIDEO_WINDOW_POS'] = "%d, %d" %(20, 20)
 
 #Displays the name of the game as the window
 pygame.display.set_caption('E-scape The E-waste')
@@ -41,14 +42,17 @@ GREY=(50,50,50)
 HEALTHRED=(222,111,111)
 
 #Loading the Backround that I drew in Paint 
-image= pygame.image.load('escape_ewaste\src\images\coralbackground.png')
+#print("Current directory:", os.getcwd())
+
+image1 = pygame.image.load('images\\coralbackground.png')
+
 #Loading the Image for The player as an orange fish  
-orangefish=pygame.image.load('escape_ewaste\src\images\leftorangefish.png')
-orangefish2=pygame.image.load('escape_ewaste\src\images\\rightorangefish.png')
+orangefish=pygame.image.load('images\leftorangefish.png')
+orangefish2=pygame.image.load('images\\rightorangefish.png')
 
 #Loading the title and instructions screen
-title=pygame.image.load('escape_ewaste\src\images\\title.PNG')
-instructions=pygame.image.load('escape_ewaste\src\images\instructions.PNG')
+title=pygame.image.load('images\\title.PNG')
+instructions=pygame.image.load('images\instructions.PNG')
 
 ############Some initial game states---------------------------------------------------------------------
 #the original position of the player 
@@ -242,7 +246,7 @@ def waste(screen, mx, my):
 def drawScreen(xlocation, ylocation, direction):
         # Displaying the coral reef backround
         draw.rect(screen, (150,255,255), (0, 0, WIDTH, HEIGHT))
-        screen.blit(image,(0,70))
+        screen.blit(image1,(0,70))
 
 #animates the fish which is the player depending on its facing direction and ability to move (spawn points vary each time)
 

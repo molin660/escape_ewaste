@@ -1,7 +1,7 @@
 import pygame
 
 pygame.init()
-width=350;
+width=350
 height=400
 screen = pygame.display.set_mode( (width, height ) )
 pygame.display.set_caption('clicked on image')
@@ -9,7 +9,7 @@ redSquare = pygame.image.load("greenfish.png").convert()
  
 x = 20; # x coordnate of image
 y = 30; # y coordinate of image
-screen.blit(redSquare ,  ( x,y)) # paint to screen
+screen.blit(redSquare ,  (x,y)) # paint to screen
 pygame.display.flip() # paint screen one time
  
 running = True
